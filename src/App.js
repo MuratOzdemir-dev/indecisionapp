@@ -8,9 +8,12 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <Header />
+        <Header
+          title="Indecision App"
+          subtitle="Put your life in the hands of a computer"
+        />
         <Action />
-        <Options />
+        <Options options={["Thing One", "Thing Two", "Thing Three"]}/>
         <AddOption />
       </div>
     );

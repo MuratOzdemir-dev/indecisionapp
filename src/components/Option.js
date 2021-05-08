@@ -4,7 +4,7 @@ export default class Option extends Component {
   render() {
     return(
       <li>
-        Option Component here
+        {this.props.option}
       </li>
     );
   }
