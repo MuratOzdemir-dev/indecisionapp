@@ -12,18 +12,25 @@ export default class App extends Component {
     this.handleDeleteOptions = this.handleDeleteOptions.bind(this);
     this.handlePick = this.handlePick.bind(this);
     this.handleAddOption = this.handleAddOption.bind(this);
-    
+    this.handleDeleteOptionSingle = this.handleDeleteOptionSingle.bind(this);
+
     this.state = {
       options: [],
     };
   }
 
   handleDeleteOptions() {
-    this.setState(() => {
-      return {
-        options: [],
-      };
-    });
+    this.setState(() => ({ options: [] }));
+  }
+
+  handleDeleteOptionSingle(option) {
+    const deleteOptionIndex = this.state.options.indexOf(option)
+    console.log(deleteOptionIndex);
+    console.log(`Gelen option: ${option}`);
+    const newArray = [...this.state.options]
+    newArray.splice(deleteOptionIndex, 1);
+    
+    this.setState(() => ({options: newArray}));
   }
 
   handlePick() {
@@ -38,12 +45,7 @@ export default class App extends Component {
       return `This option already exists`;
     }
 
-
-    this.setState((prevState) => {
-      return {
-        options: [...prevState.options, option]
-      }
-    })
+    this.setState((prevState) => ({ options: [...prevState.options, option] }));
   }
 
   render() {
@@ -60,10 +62,11 @@ export default class App extends Component {
         <Options
           options={this.state.options}
           handleDeleteOptions={this.handleDeleteOptions}
+          handleDeleteOptionSingle = {this.handleDeleteOptionSingle}
         />
         <AddOption handleAddOption={this.handleAddOption} />
-        {/* <Counter />
-        <Visibility /> */}
+        {/* <Counter count={10} /> */}
+        {/* <Visibility /> */}
       </div>
     );
   }
