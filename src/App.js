@@ -24,13 +24,9 @@ export default class App extends Component {
   }
 
   handleDeleteOptionSingle(option) {
-    const deleteOptionIndex = this.state.options.indexOf(option)
-    console.log(deleteOptionIndex);
-    console.log(`Gelen option: ${option}`);
-    const newArray = [...this.state.options]
-    newArray.splice(deleteOptionIndex, 1);
-    
-    this.setState(() => ({options: newArray}));
+    this.setState(prevState => ({
+      options: prevState.options.filter(item => (item !== option))
+    }))
   }
 
   handlePick() {
@@ -62,7 +58,7 @@ export default class App extends Component {
         <Options
           options={this.state.options}
           handleDeleteOptions={this.handleDeleteOptions}
-          handleDeleteOptionSingle = {this.handleDeleteOptionSingle}
+          handleDeleteOptionSingle={this.handleDeleteOptionSingle}
         />
         <AddOption handleAddOption={this.handleAddOption} />
         {/* <Counter count={10} /> */}
