@@ -19,14 +19,38 @@ export default class App extends Component {
     };
   }
 
+  componentDidMount() {
+
+    try {
+      const json = localStorage.getItem("options");
+      const options = JSON.parse(json);
+  
+      if (options) {
+        this.setState(() => ({ options }));
+      }      
+    } catch (e) {
+      
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.options.length !== this.state.options.length) {
+      const json = JSON.stringify(this.state.options);
+      localStorage.setItem("options", json);
+    }
+  }
+  componentWillUnmount() {
+    console.log("componentwillunmount");
+  }
+
   handleDeleteOptions() {
     this.setState(() => ({ options: [] }));
   }
 
   handleDeleteOptionSingle(option) {
-    this.setState(prevState => ({
-      options: prevState.options.filter(item => (item !== option))
-    }))
+    this.setState((prevState) => ({
+      options: prevState.options.filter((item) => item !== option),
+    }));
   }
 
   handlePick() {
