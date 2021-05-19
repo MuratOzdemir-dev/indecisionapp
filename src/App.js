@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import Action from "./components/Action";
 import Options from "./components/Options";
 import AddOption from "./components/AddOption";
-// import Counter from "./components/Counter";
+import Counter from "./components/Counter";
 // import Visibility from "./components/Visibility";
 
 export default class App extends Component {
@@ -85,7 +85,7 @@ export default class App extends Component {
           handleDeleteOptionSingle={this.handleDeleteOptionSingle}
         />
         <AddOption handleAddOption={this.handleAddOption} />
-        {/* <Counter count={10} /> */}
+        <Counter  />
         {/* <Visibility /> */}
       </div>
     );
