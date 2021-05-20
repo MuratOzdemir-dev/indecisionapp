@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import Header from "./components/Header";
-import Action from "./components/Action";
-import Options from "./components/Options";
-import AddOption from "./components/AddOption";
-import Counter from "./components/Counter";
-// import Visibility from "./components/Visibility";
+import Header from "./Header";
+import Action from "./Action";
+import Options from "./Options";
+import AddOption from "./AddOption";
+import OptionModal from "./OptionModal";
+// import Counter from "./Counter";
+// import Visibility from "./Visibility";
 
 export default class App extends Component {
   constructor() {
@@ -20,17 +21,14 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-
     try {
       const json = localStorage.getItem("options");
       const options = JSON.parse(json);
-  
+
       if (options) {
         this.setState(() => ({ options }));
-      }      
-    } catch (e) {
-      
-    }
+      }
+    } catch (e) {}
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -85,8 +83,9 @@ export default class App extends Component {
           handleDeleteOptionSingle={this.handleDeleteOptionSingle}
         />
         <AddOption handleAddOption={this.handleAddOption} />
-        <Counter  />
+        {/* <Counter  /> */}
         {/* <Visibility /> */}
+        <OptionModal />
       </div>
     );
   }
