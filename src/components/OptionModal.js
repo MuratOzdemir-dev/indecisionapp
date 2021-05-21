@@ -18,12 +18,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function OptionModal() {
+export default function OptionModal(props) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
   const handleOpen = () => {
     setOpen(true);
+    props.handlePick();
   };
 
   const handleClose = () => {
@@ -32,8 +33,8 @@ export default function OptionModal() {
 
   return (
     <div>
-      <button type="button" onClick={handleOpen}>
-        react-transition-group
+      <button type="button" onClick={handleOpen} disabled={!props.hasOptions}>
+        What should I do?
       </button>
       <Modal
         aria-labelledby="transition-modal-title"
@@ -49,8 +50,8 @@ export default function OptionModal() {
       >
         <Fade in={open}>
           <div className={classes.paper}>
-            <h2 id="transition-modal-title">Transition modal</h2>
-            <p id="transition-modal-description">react-transition-group animates me.</p>
+            <h2 id="transition-modal-title">{props.selected}</h2>
+            {/* <p id="transition-modal-description">react-transition-group animates me.</p> */}
           </div>
         </Fade>
       </Modal>

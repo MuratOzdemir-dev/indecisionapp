@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Header from "./Header";
-import Action from "./Action";
+// import Action from "./Action";
 import Options from "./Options";
 import AddOption from "./AddOption";
 import OptionModal from "./OptionModal";
@@ -17,6 +17,7 @@ export default class App extends Component {
 
     this.state = {
       options: [],
+      selected: undefined
     };
   }
 
@@ -53,7 +54,7 @@ export default class App extends Component {
 
   handlePick() {
     const random = Math.floor(Math.random() * this.state.options.length);
-    alert(this.state.options[random]);
+    this.setState(() => ({selected: this.state.options[random]}));
   }
 
   handleAddOption(option) {
@@ -73,9 +74,10 @@ export default class App extends Component {
           title="Indecision App"
           subtitle="Put your life in the hands of a computer"
         />
-        <Action
+        <OptionModal
           hasOptions={this.state.options.length > 0}
           handlePick={this.handlePick}
+          selected={this.state.selected}
         />
         <Options
           options={this.state.options}
@@ -85,7 +87,7 @@ export default class App extends Component {
         <AddOption handleAddOption={this.handleAddOption} />
         {/* <Counter  /> */}
         {/* <Visibility /> */}
-        <OptionModal />
+        
       </div>
     );
   }
