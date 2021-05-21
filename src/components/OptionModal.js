@@ -24,11 +24,12 @@ export default function OptionModal(props) {
 
   const handleOpen = () => {
     setOpen(true);
-    props.handlePick();
+    props.handlePick(open);
   };
 
   const handleClose = () => {
     setOpen(false);
+    props.handlePick(open);
   };
 
   return (
@@ -50,8 +51,8 @@ export default function OptionModal(props) {
       >
         <Fade in={open}>
           <div className={classes.paper}>
-            <h2 id="transition-modal-title">{props.selected}</h2>
-            {/* <p id="transition-modal-description">react-transition-group animates me.</p> */}
+            <h2 id="transition-modal-title">Selected</h2>
+            <p id="transition-modal-description">{props.selected}</p>
           </div>
         </Fade>
       </Modal>

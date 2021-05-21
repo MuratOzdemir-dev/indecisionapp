@@ -52,9 +52,12 @@ export default class App extends Component {
     }));
   }
 
-  handlePick() {
+  handlePick(open) {
     const random = Math.floor(Math.random() * this.state.options.length);
     this.setState(() => ({selected: this.state.options[random]}));
+    if (open) {
+      this.setState(() => ({selected: undefined}));
+    }
   }
 
   handleAddOption(option) {
