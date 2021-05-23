@@ -5,7 +5,8 @@ import Options from "./Options";
 import AddOption from "./AddOption";
 import OptionModal from "./OptionModal";
 // import Counter from "./Counter";
-// import Visibility from "./Visibility";
+import Visibility from "./Visibility/Visibility";
+import "./app.scss";
 
 export default class App extends Component {
   constructor() {
@@ -89,7 +90,7 @@ export default class App extends Component {
         />
         <AddOption handleAddOption={this.handleAddOption} />
         {/* <Counter  /> */}
-        {/* <Visibility /> */}
+        <Visibility />
         
       </div>
     );

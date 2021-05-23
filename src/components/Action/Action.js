@@ -1,4 +1,5 @@
 import React from "react";
+import "./action.scss";
 
 export default function Action(props) {
   return (
@@ -6,6 +7,7 @@ export default function Action(props) {
       <button disabled={!props.hasOptions} onClick={props.handlePick}>
         What should I do?
       </button>
+      <p>Murat</p>
     </div>
   );
 }

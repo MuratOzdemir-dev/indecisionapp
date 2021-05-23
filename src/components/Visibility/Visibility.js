@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import "./_visibility.scss";
+
 
 export default class Visibility extends Component {
   constructor(props) {
