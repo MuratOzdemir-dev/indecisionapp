@@ -1,5 +1,4 @@
 import React from "react";
-import "./_option.scss";
 
 export default function Option(props) {
   return (

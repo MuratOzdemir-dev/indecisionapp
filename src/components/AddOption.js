@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./_add-option.scss";
 
 export default function AddOption(props) {
   const [error, setError] = useState(undefined);

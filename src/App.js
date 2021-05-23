@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import Header from "./Header/Header";
-import Action from "./Action/Action";
-import Options from "./Options/Options";
-import AddOption from "./AddOption/AddOption";
-import Counter from "./Counter/Counter";
-import Visibility from "./Visibility/Visibility";
-import "./style/style.scss";
+import Header from "./components/Header";
+import Action from "./components/Action";
+import Options from "./components/Options";
+import AddOption from "./components/AddOption";
+// import Counter from "./components/Counter";
+// import Visibility from "./components/Visibility";
+import "./scss/style.scss";
 
 export default class App extends Component {
   constructor() {
@@ -17,7 +17,7 @@ export default class App extends Component {
 
     this.state = {
       options: [],
-      selected: undefined
+      selected: undefined,
     };
   }
 
@@ -38,9 +38,6 @@ export default class App extends Component {
       localStorage.setItem("options", json);
     }
   }
-  componentWillUnmount() {
-    console.log("componentwillunmount");
-  }
 
   handleDeleteOptions() {
     this.setState(() => ({ options: [] }));
@@ -54,9 +51,9 @@ export default class App extends Component {
 
   handlePick(open) {
     const random = Math.floor(Math.random() * this.state.options.length);
-    this.setState(() => ({selected: this.state.options[random]}));
+    this.setState(() => ({ selected: this.state.options[random] }));
     if (open) {
-      this.setState(() => ({selected: undefined}));
+      this.setState(() => ({ selected: undefined }));
     }
   }
 
@@ -88,9 +85,8 @@ export default class App extends Component {
           handleDeleteOptionSingle={this.handleDeleteOptionSingle}
         />
         <AddOption handleAddOption={this.handleAddOption} />
-        <Counter  />
-        <Visibility />
-        
+        {/* <Counter /> */}
+        {/* <Visibility /> */}
       </div>
     );
   }
