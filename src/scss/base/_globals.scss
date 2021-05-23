@@ -24,7 +24,16 @@ button {
 .button {
   background-color: $purple;
   border: none;
-  border-bottom: 1px solid #000;
+  border-bottom: 0.1875rem solid darken($purple, 10%);
+  color: white;
+  font-weight: 500;
+  padding: $ss;
+  &--link {
+    background: none;
+    border: none;
+    color: $light-white;
+    padding: 0;
+  }
 }
 
 .container {

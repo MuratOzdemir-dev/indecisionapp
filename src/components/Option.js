@@ -5,6 +5,7 @@ export default function Option(props) {
     <div className="option">
       <li>{props.option}</li>
       <button
+        className="button button--link"
         onClick={(e) => {
           props.handleDeleteOptionSingle(props.option);
         }}
