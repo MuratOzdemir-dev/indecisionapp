@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import Header from "./Header";
-// import Action from "./Action";
-import Options from "./Options";
-import AddOption from "./AddOption";
-import OptionModal from "./OptionModal";
-// import Counter from "./Counter";
+import Header from "./Header/Header";
+import Action from "./Action/Action";
+import Options from "./Options/Options";
+import AddOption from "./AddOption/AddOption";
+import Counter from "./Counter/Counter";
 import Visibility from "./Visibility/Visibility";
-import "./app.scss";
+import "./style/style.scss";
 
 export default class App extends Component {
   constructor() {
@@ -78,7 +77,7 @@ export default class App extends Component {
           title="Indecision App"
           subtitle="Put your life in the hands of a computer"
         />
-        <OptionModal
+        <Action
           hasOptions={this.state.options.length > 0}
           handlePick={this.handlePick}
           selected={this.state.selected}
@@ -89,7 +88,7 @@ export default class App extends Component {
           handleDeleteOptionSingle={this.handleDeleteOptionSingle}
         />
         <AddOption handleAddOption={this.handleAddOption} />
-        {/* <Counter  /> */}
+        <Counter  />
         <Visibility />
         
       </div>

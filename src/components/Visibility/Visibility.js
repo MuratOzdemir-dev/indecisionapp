@@ -19,7 +19,7 @@ export default class Visibility extends Component {
 
   render() {
     return (
-      <div>
+      <div className="visibility">
         <h1>Visibility Toggle</h1>
         <button onClick={this.handleToggle}>
           {this.state.visibility ? "Hide" : "Show"}

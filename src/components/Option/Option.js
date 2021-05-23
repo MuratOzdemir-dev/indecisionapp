@@ -1,8 +1,9 @@
 import React from "react";
+import "./_option.scss";
 
 export default function Option(props) {
   return (
-    <div>
+    <div className="option">
       <li>{props.option}</li>
       <button
         onClick={(e) => {

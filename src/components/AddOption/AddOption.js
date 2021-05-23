@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./_add-option.scss";
 
 export default function AddOption(props) {
   const [error, setError] = useState(undefined);
@@ -14,7 +15,7 @@ export default function AddOption(props) {
   };
 
   return (
-    <div>
+    <div className="add-option">
       {error && <p>{error}</p>}
       <form onSubmit={handleAddOption}>
         <input type="text" name="option" />
