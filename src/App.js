@@ -74,19 +74,21 @@ export default class App extends Component {
           title="Indecision App"
           subtitle="Put your life in the hands of a computer"
         />
-        <Action
-          hasOptions={this.state.options.length > 0}
-          handlePick={this.handlePick}
-          selected={this.state.selected}
-        />
-        <Options
-          options={this.state.options}
-          handleDeleteOptions={this.handleDeleteOptions}
-          handleDeleteOptionSingle={this.handleDeleteOptionSingle}
-        />
-        <AddOption handleAddOption={this.handleAddOption} />
-        {/* <Counter /> */}
-        {/* <Visibility /> */}
+        <div className="container">
+          <Action
+            hasOptions={this.state.options.length > 0}
+            handlePick={this.handlePick}
+            selected={this.state.selected}
+          />
+          <Options
+            options={this.state.options}
+            handleDeleteOptions={this.handleDeleteOptions}
+            handleDeleteOptionSingle={this.handleDeleteOptionSingle}
+          />
+          <AddOption handleAddOption={this.handleAddOption} />
+          {/* <Counter /> */}
+          {/* <Visibility /> */}
+        </div>
       </div>
     );
   }

@@ -1,16 +1,16 @@
 .header {
-  background-color: #20222b;
+  background-color: $light-black;
   color: white;
-  margin-bottom: 3rem;
-  padding: 1rem;
+  margin-bottom: $xs;
+  padding: $ms 0;
 
   &__title {
-    font-size: 2rem;
+    font-size: $ls;
   }
 
   &__subtitle {
-    color: $white;
-    font-size: 1rem;
+    color: $light-white;
+    font-size: $ms;
     font-weight: 500;
   }
 }
