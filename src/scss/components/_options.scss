@@ -1,3 +1,20 @@
 .options {
+  background-color: $light-blue;
+
+  &__header {
+    background-color: $blue;
+    color: $light-white;
+    display: flex;
+    justify-content: space-between;
+    padding: $ms;
+  }
+
   
+  &__warning {
+    text-align: center;
+    color: $light-white;
+    font-size: 1.2rem;
+    padding: $ls $ms;
+    border-bottom: 1px solid lighten($light-blue, 10%);
+  }
 }

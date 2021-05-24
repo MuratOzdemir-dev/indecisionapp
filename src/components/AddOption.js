@@ -15,9 +15,9 @@ export default function AddOption(props) {
 
   return (
     <div className="add-option">
-      {error && <p>{error}</p>}
+      {error && <p className="add-option__error">{error}</p>}
       <form onSubmit={handleAddOption}>
-        <input type="text" name="option" />
+        <input type="text" name="option" className="add-option__input" />
         <button className="button">Add Option</button>
       </form>
     </div>

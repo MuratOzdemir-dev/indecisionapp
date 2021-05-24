@@ -1,3 +1,12 @@
 .option {
-  
+  align-items: center;
+  border-bottom: 1px solid lighten($light-blue, 10%);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: $ms;
+  li {
+    list-style-position: inside;
+    font-size: $ms;
+  }
 }

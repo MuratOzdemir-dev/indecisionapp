@@ -3,13 +3,13 @@
     background-color: $purple;
     border: none;
     border-bottom: .375rem solid darken($purple, 10%);
+    border-radius: $ms;
     color: white;
     font-weight: bold;
     font-size: $ls;
     margin-bottom: $xs;
     padding: 1.5rem;
     width: 100%;
-    
     &:disabled {
       opacity: 0.5;
     }

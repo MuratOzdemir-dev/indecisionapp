@@ -10,34 +10,8 @@ body {
   font-size: 100%;
 }
 
-li {
-  list-style-type: none;
-}
 
-button {
-  cursor: pointer;
-  &:disabled {
-    cursor: not-allowed;
-  }
-}
 
-.button {
-  background-color: $purple;
-  border: none;
-  border-bottom: 0.1875rem solid darken($purple, 10%);
-  color: white;
-  font-weight: 500;
-  padding: $ss;
-  &--link {
-    background: none;
-    border: none;
-    color: $light-white;
-    padding: 0;
-  }
-}
 
-.container {
-  max-width: 60rem;
-  margin: 0 auto;
-  padding: 0 $ms;
-}
+
+

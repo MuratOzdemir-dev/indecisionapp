@@ -1,0 +1,24 @@
+button {
+  cursor: pointer;
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.button {
+  background-color: $purple;
+  border: none;
+  border-bottom: 0.1875rem solid darken($purple, 10%);
+  border-radius: .5rem;
+  color: white;
+  font-weight: 500;
+  padding: $ss;
+  &--link {
+    @extend .button;
+    background: none;
+    border: none;
+    color: $light-white;
+    font-size: $ms;
+    padding: 0;
+  }
+}

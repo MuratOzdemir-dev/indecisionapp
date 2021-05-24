@@ -2,11 +2,13 @@
 @import "./base/variables";
 @import "./base/globals";
 
+// Commons
+@import "./commons/buttons";
+@import "./commons/container";
+
 // Components
 @import "./components/action";
-@import "./components/add-option";
-@import "./components/counter";
 @import "./components/header";
-@import "./components/option";
 @import "./components/options";
-@import "./components/visibility";
+@import "./components/option";
+@import "./components/add-option";
