@@ -14,8 +14,10 @@
     border-radius: .5rem;
     color: white;
     font-size: $ls;
+    flex-grow: 1;
     margin-right: $ms;
     padding: 0 $ms;
+    outline: none;
     width: 100%;
   }
 

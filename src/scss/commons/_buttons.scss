@@ -21,4 +21,8 @@ button {
     font-size: $ms;
     padding: 0;
   }
+  &--modal {
+    @extend .button;
+    width: 100%;
+  }
 }

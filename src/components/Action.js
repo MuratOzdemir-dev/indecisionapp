@@ -11,10 +11,14 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
   },
   paper: {
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: "#3c4251",
     border: "2px solid #000",
+    borderRadius: 5,
     boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
+    padding: 32,
+    paddingBottom: 16,
+    textAlign: "center",
+    
   },
 }));
 
@@ -56,8 +60,9 @@ export default function OptionModal(props) {
       >
         <Fade in={open}>
           <div className={classes.paper}>
-            <h2 id="transition-modal-title">Selected</h2>
+            <h2 id="transition-modal-title">Selected Option</h2>
             <p id="transition-modal-description">{props.selected}</p>
+            <button onClick={handleClose} className="button--modal">Ok</button>
           </div>
         </Fade>
       </Modal>
